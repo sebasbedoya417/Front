@@ -1,16 +1,18 @@
 import Card from "./Card"
 import Menulateral from "./Menulateral"
+import Usuarios from "./database"
 
-
-const PanelControl = () =>{
-    return(
-
+const PanelControl = () => {
+    
+    return (
         <section className="panel-control">
-            <Menulateral/>  
+            <Menulateral />
             <div className="panel-control-contenido">
-                <Card/>
-                <Card/>
-                <Card/> 
+                {
+                    Usuarios.map((usuario) => {
+                        return <Card usuario = {usuario}/>
+                    })
+                }
             </div>
         </section>
     )
